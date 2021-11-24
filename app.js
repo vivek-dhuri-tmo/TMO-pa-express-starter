@@ -75,14 +75,18 @@ try {
 res.setHeader('Content-Type', 'application/json');
 
 if (dup_flag == 'NO') {
-res.send(JSON.stringify(file_obj['books'][file_obj['books'].length-1]))
+res.status(201).send(JSON.stringify(file_obj['books'][file_obj['books'].length-1]))
 }
 
 if (dup_flag == 'YES') {
-res.send(JSON.stringify(file_obj['books'][dup_id]))
+res.status(200).send(JSON.stringify(file_obj['books'][dup_id]))
 }
 
-});
+//Reset the duplicate flags
+dup_flag = 'NO';
+dup_id = 0;
+
+})
 
 //***************************************************************************************************//
 //***************************************************************************************************//
