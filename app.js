@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-app.get("api/books", (req, res) => {
+app.get("/api/books", (req, res) => {
   // res.status(200).send("Don't panic.");
   var fs = require('fs');
 
@@ -44,7 +44,7 @@ res.send(JSON.parse(JSON.stringify(data_lib)))
 //***************************************************************************************************//
 //***************************************************************************************************//
 
-app.post('api/books', (req, res) => {
+app.post('/api/books', (req, res) => {
   var obj = {
     'books': []
   };
@@ -102,7 +102,7 @@ app.post('api/books', (req, res) => {
 //***************************************************************************************************//
 //***************************************************************************************************//
 
-  app.delete('api/books', (req, res) => {
+  app.delete('/api/books', (req, res) => {
 
     var fs = require('fs');
     
