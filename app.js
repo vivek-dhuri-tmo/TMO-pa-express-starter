@@ -79,7 +79,7 @@ res.status(201).send(JSON.stringify(file_obj['books'][file_obj['books'].length-1
 }
 
 if (dup_flag == 'YES') {
-res.status(200).send(JSON.stringify(file_obj['books'][dup_id]))
+res.status(201).send(JSON.stringify(file_obj['books'][dup_id]))
 }
 
 //Reset the duplicate flags
