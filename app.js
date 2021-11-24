@@ -21,6 +21,10 @@ var fs = require('fs');
 
 var data = null;
 
+var dup_flag = 'NO';
+
+var dup_id = 0;
+
 try {
   data = fs.readFileSync('library.json', 'utf8')
   console.log(data)
@@ -32,8 +36,6 @@ if (data !== null && data !== "")
 	{
 	data_lib = JSON.parse(data);
 //Add check for duplicates here
-var dup_flag = 'NO';
-var dup_id = 0;
 	for (let i = 0; i < data_lib['books'].length; i++) 
 		{
      		if (data_lib['books'][i]['title'] == obj['books'][0]['title']) 
